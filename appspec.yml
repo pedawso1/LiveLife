@@ -3,8 +3,8 @@ version: 0.0
 os: linux
 
 files:
--source: ./
-    destination: /home/Tacvalorg
+-source: /
+    destination: /home/tacvalorg
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
