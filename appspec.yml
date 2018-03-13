@@ -4,4 +4,3 @@ os: linux
 
 files:
 -source: ./
- destination: /home/ubuntu/LL
