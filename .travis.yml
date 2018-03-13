@@ -8,7 +8,7 @@ deploy:
   local_dir: dpl_cd_upload
   skip_cleanup: true
   on: &2
-    repo: pedawso1/LiveLife
+  repo: pedawso1/LiveLife
   bucket: livelife-bucket
   region: us-east-2
 - provider: codedeploy
