@@ -1,6 +1,9 @@
 language: java
-  
 
+services:
+-postgresql
+
+cache:
 
 deploy:
 - provider: s3
@@ -9,22 +12,21 @@ deploy:
   local_dir: dpl_cd_upload
   skip_cleanup: true
   on: &2
-  repo: LiveLife
+    repo: LiveLife
   bucket: livelife-bucket
   region: us-east-2
 - provider: codedeploy
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  bucket: livelife-bucket
+  bucket: yourBucketNameHERE
   key: latest.zip
   bundle_type: zip
   application: LiveLife
   deployment_group: LiveLife
   region: us-east-2
   on: *2
-
 script:
-  - mvn clean test
+  -mvn clean test
   - zip -r latest *
   - mkdir -p dpl_cd_upload
   - mv latest.zip dpl_cd_upload/latest.zip
